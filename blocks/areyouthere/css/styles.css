@@ -1,0 +1,32 @@
+body{
+	text-align: center;
+}
+#webcam{
+	float:right;
+    width: 100%;
+}
+#capture{
+    display: inline-block;
+    border:1px solid black;
+    padding: 4px 4px;
+    background-color: grey; 
+    margin: 0 auto;
+    text-align: center;
+    cursor:pointer;
+}
+#save{	
+    display: inline-block;
+	border:1px solid black;
+	padding: 4px 4px;
+	background-color: grey; 
+	margin: 0 auto;
+	text-align: center;
+	cursor:pointer;
+}
+#canvas{
+    display: block;
+    margin: 0 auto;
+}
+.error{
+    visibility: hidden;
+}
