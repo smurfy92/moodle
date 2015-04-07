@@ -18,7 +18,7 @@
 
 	"mode": "callback", // callback | save | stream
 
-	"swffile": "blocks/areyouthre/webcam/jscam.swf",
+	"swffile": "/moodle/blocks/areyouthre/webcam/jscam.swf",
 	"quality": 85,
 
 	"debug":	function () {},

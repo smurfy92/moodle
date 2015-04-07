@@ -41,5 +41,4 @@ $plugins = array(
     'migrate' => array('files' => array('jquery-migrate-1.2.1.min.js')),
     'ui'      => array('files' => array('ui-1.11.1/jquery-ui.min.js')),
     'ui-css'  => array('files' => array('ui-1.11.1/theme/smoothness/jquery-ui.min.css')),
-    'webcam'  => array('files' => array('jquery.webcam.css')),
 );

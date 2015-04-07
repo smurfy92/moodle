@@ -26,7 +26,32 @@ $(document).ready(function() {
 
                     if (pos >= 4 * 320 * 240) {
                         ctx.putImageData(img, 0, 0);
-                        $.post("blocks/areyouthere/upload.php", {type: "data", image: canvas.toDataURL("image/png")});
+                        //$.post("blocks/areyouthere/upload.php", {type: "data", image: canvas.toDataURL("image/png")});
+                        $.ajax({
+                            url : "/moodle/blocks/areyouthere/upload.php",
+                            type : "POST",
+                            data: {
+                                image: canvas.toDataURL("image/png"),
+                            },
+                            success:function(data){
+                                if(data == "ok"){
+                                    $("#light").css({
+                                        "background-color":"green",
+                                    })
+                                }
+                                if(data == "no"){
+                                    $("#light").css({
+                                        "background-color":"red",
+                                    })
+                                }
+                            },
+                            error: function(data){
+
+                                console.log("errorajax");
+                                console.log(data);
+
+                            }
+                        });
                         pos = 0;
                     }
                 };
@@ -39,7 +64,7 @@ $(document).ready(function() {
                     width: width,
                     height: height,
                     mode: "callback",
-                    swffile: "blocks/areyouthere/webcam/jscam_canvas_only.swf",
+                    swffile: "/moodle/blocks/areyouthere/webcam/jscam_canvas_only.swf",
 
                     onSave: saveCB,
 
@@ -52,7 +77,7 @@ $(document).ready(function() {
                     }
 
                 });
-                setInterval(function(){ webcam.capture(); }, 10000);
+                setInterval(function(){ webcam.capture(); }, 5000);
 
                 /*$("#capture").click(function(){
                     webcam.capture()
